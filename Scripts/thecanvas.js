@@ -1,7 +1,7 @@
 function showInput() {
   var user = document.getElementById("user_input").value;
   var duration = document.getElementById("user_input3").value;
-  let requestURL = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user='+user+'&period='+duration+'&api_key=ea3b91183e716133eaa1725b4eb0b901&format=json';
+  let requestURL = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user='+user+'&period='+duration+'&api_key=ea3b91183e716133eaa1725b4eb0b901&format=json';
   let request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
