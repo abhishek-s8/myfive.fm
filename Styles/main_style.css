@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background-color: #ba0000;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+canvas{
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+h4 {
+  text-align: center;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+label {
+  font-size: 17px;
+}
+
+.jumbotron {
+  margin: auto;
+  width: 75%;
+  background-color: #C0C0C0;
+}
+
+.logo {
+  width: 30%;
+  height: auto;
+}
+
+button{
+  background:#ba0000;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:45px;
+  font-size:1.3em;
+  padding:0 1em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+button:hover{
+  background:#fff;
+  color:#ba0000;
+}
+
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ba0000;
+  transition:400ms ease all;
+}
+
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+@media screen and (max-device-width: 500px) {
+    .logo {
+      width: 65%;
+    }
+    h4 {
+      font-size: 13px!important;
+    }
+}
+
+@media screen and (max-device-width: 660px) {
+    .logo {
+      width: 50%;
+    }
+    h5 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+}
+

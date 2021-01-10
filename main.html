@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myfive.fm</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Styles/main_style.css">
+    <link rel="stylesheet" href="./Styles/components_style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./Scripts/dropdown.js" type="text/javascript"></script>
+    <script src="./Scripts/thecanvas.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="row mt-4 mb-4">
+      <div class="col text-center">
+        <img src="./Images/default-monochrome-white.svg" class="logo">
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <p>myfive.fm generates an image of the top 5 listened to albums from your Last.FM account for a given timespan.</p>
+
+      <form class="mb-4">     
+        <label class="mb-2"><b>Username*</b></label>
+        <input type="text" class="user-input mb-4" placeholder="Username*" name="message" id="user_input">
+
+        <h5><b>Optional</b></h5>
+        <label class="mb-2"><b>Your Name</b></label>
+        <input type="text" class="user-input mb-3" placeholder="Name" name="name" id="user_input2">
+        
+        <label class="mb-2"><b>Customize</b></label><br>
+        <div class="sel mr-4">
+          <select id="user_input3">
+            <option value="" disabled>Duration</option>
+            <option value="overall">Overall</option>
+            <option value="12month">1 year</option>
+            <option value="6month">6 months</option>
+            <option value="3month">3 months</option>
+            <option value="1month">1 month</option>
+            <option value="7day">7 days</option>
+          </select>
+        </div>
+        <div class="sel mr-4">
+          <select id="user_input4">
+            <option value="" disabled>Background Color</option>
+            <option value="results_blue.png">Blue</option>
+            <option value="results_red.png">Red</option>
+            <option value="results_purple.png">Purple</option>
+            <option value="results_pink.png">Pink</option>
+            <option value="results_orange.png">Orange</option>
+            <option value="results_green.png">Green</option>
+            <option value="results_sky.png">Sky</option>
+          </select>
+        </div>
+
+        <div class="sel">
+          <select id="user_input5">
+            <option value="" disabled>Font Color</option>
+            <option value="#ffffff">White</option>
+            <option value="#000000">Black</option>
+          </select>
+        </div>
+      </form>
+
+      <button class="button" id="myButton" onclick="showInput();">Generate</button>
+    </div> 
+
+    <div class="jumbotron mt-5 mb-5">
+      <h4>🔻 Your top 5 listened to albums 🔻</h4>
+      <div class="row">
+        <div class="col text-center">
+          <canvas id="canvas1"></canvas>
+        </div>
+      </div>
+    </div> 
+  </body>
+
+  <script>
+    //create canvas with default image
+    x = 1080;
+    y = 1980;
+    var canvas = document.getElementById('canvas1');
+    canvas.width = x;
+    canvas.height = y;
+    var ctx = canvas.getContext('2d');
+    var background = new Image();
+    background.src = "./Images/temp.png";
+    background.onload = function() {
+      ctx.drawImage(background, 0, 0, x, y);
+    }
+  </script>
+</html>
