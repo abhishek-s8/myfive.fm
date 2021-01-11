@@ -144,3 +144,13 @@ const capitalize = (s) => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
+
+//function to download canvas image
+function download_image(){
+  var canvas = document.getElementById("canvas1");
+  image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  var link = document.createElement('a');
+  link.download = "myfive.png";
+  link.href = image;
+  link.click();
+}
