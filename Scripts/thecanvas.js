@@ -22,16 +22,22 @@ function showRankings(obj) {
   if (! canvas || ! canvas.getContext) { return false; }
 
   var background = new Image();
+  background.setAttribute('crossOrigin', 'anonymous');
   background.src = "./Images/"+document.getElementById("user_input4").value;
 
   background.onload = function() {
 
     var albumCovers = new Array();
     albumCovers[0] = new Image();
+    albumCovers[0].setAttribute('crossOrigin', 'anonymous');
     albumCovers[1] = new Image();
+    albumCovers[1].setAttribute('crossOrigin', 'anonymous');
     albumCovers[2] = new Image();
+    albumCovers[2].setAttribute('crossOrigin', 'anonymous');
     albumCovers[3] = new Image();
+    albumCovers[3].setAttribute('crossOrigin', 'anonymous');
     albumCovers[4] = new Image();
+    albumCovers[4].setAttribute('crossOrigin', 'anonymous');
 
     try {
       //get the album images
